@@ -14,7 +14,7 @@ exports.getPosts = (req, res, next) => {
         .then(count => {
             totalItems = count;
             return Post.find()
-                .skip((currentPage -1) * perPage)
+                .skip((currentPage - 1) * perPage)
                 .limit(perPage);
         })
         .then(posts => {
